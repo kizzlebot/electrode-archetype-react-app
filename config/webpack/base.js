@@ -21,6 +21,19 @@ var inspectpack = process.env.INSPECTPACK_DEBUG === "true";
 
 var context = Path.resolve(archetype.clientSrcDir);
 
+function webpackCustomConfig() {
+  var webpackPath = Path.join(context, "webpack.config.js");
+
+  /* eslint-disable no-console, global-require */
+  try {
+    return require(webpackPath);
+  } catch (ex) {
+    console.log("Webpack configuration is not found, using default webpack...");
+  }
+  /* eslint-enable no-console, global-require */
+
+  return {};
+}
 /* eslint-disable func-style */
 
 /*
@@ -75,7 +88,7 @@ var baseConfig = {
 };
 
 module.exports = _.flow(
-  mergeWebpackConfig.bind(null, {}, baseConfig),
+  mergeWebpackConfig.bind(null, {}, baseConfig, webpackCustomConfig()),
   babelConfig(),
   extractStylesConfig(),
   fontsConfig(),

@@ -1,5 +1,5 @@
 {
-  "name": "electrode-archetype-react-app",
+  "name": "@kizzlebot/electrode-archetype-react-app",
   "version": "1.5.0",
   "description": "Electrode NodeJS/React Universal Application Archetype",
   "main": "arch-gulpfile.js",
@@ -22,6 +22,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.3.13",
     "babel-plugin-transform-react-constant-elements": "^6.5.0",
     "babel-plugin-transform-react-inline-elements": "^6.6.5",
+    "sw-precache-webpack-plugin": "^0.6.3",
     "babel-plugin-transform-runtime": "^6.8.0",
     "babel-polyfill": "6.5.0",
     "babel-preset-es2015": "^6.3.13",
@@ -29,7 +30,8 @@
     "babel-preset-react": "^6.3.13",
     "babel-register": "^6.14.0",
     "css-modules-require-hook": "^4.0.2",
-    "isomorphic-loader": "^1.0.0"
+    "isomorphic-loader": "^1.0.0",
+    "web-app-manifest-loader": "^0.1.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.0",
